@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
 
-dataset = pd.read_csv('/Users/bhuvanrj/Desktop/git upload/UberDS.csv')
-cols =['dispatching_base_number','date','active_vehicles']
-dataset["date"] = [float(str(i).replace("/", "")) for i in dataset["date"]]
+dataset = pd.read_csv('/Users/bhuvanrj/Desktop/git upload/UberDS.csv')#reading file
+cols =['dispatching_base_number','date','active_vehicles']#getting important columns
+dataset["date"] = [float(str(i).replace("/", "")) for i in dataset["date"]]#replacing the "/" in dates to nothing as the data had /
 X= dataset[cols]
 Y=dataset.trips
-
+#filling empty data with junk
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import make_column_transformer
 A = make_column_transformer((OneHotEncoder(categories="auto"),[0]),remainder='passthrough')
