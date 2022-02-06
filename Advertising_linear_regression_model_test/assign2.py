@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as ny
 
-datasets_train=pd.read_csv("/Users/bhuvanrj/Desktop/data science/train.csv")
-datasets_test=pd.read_csv("/Users/bhuvanrj/Desktop/data science/test.csv")
+datasets_train=pd.read_csv("/Users/bhuvanrj/Desktop/data science/train.csv")// give your file path
+datasets_test=pd.read_csv("/Users/bhuvanrj/Desktop/data science/test.csv")// give your file path
 
 
 
