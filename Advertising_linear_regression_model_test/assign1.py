@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as ny
 
-datasets= pd.read_csv("/Users/bhuvanrj/Desktop/data science/Advertising.csv")
+datasets= pd.read_csv("/Users/bhuvanrj/Desktop/data science/Advertising.csv")//your file path name
 
 X=datasets.iloc[:,:-1]
 Y=datasets.iloc[:,3]
