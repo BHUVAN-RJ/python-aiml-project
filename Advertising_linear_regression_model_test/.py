@@ -3,17 +3,20 @@ import numpy as ny
 
 datasets= pd.read_csv("/Users/bhuvanrj/Desktop/data science/Advertising.csv")//your file path name
 
-X=datasets.iloc[:,:-1]
-Y=datasets.iloc[:,3]
+X=datasets.iloc[:,:-1]//initializing X
+Y=datasets.iloc[:,3]////initializing Y
 
+//spliting data into train and test set
 from sklearn.model_selection import train_test_split
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.20,random_state=0)
 
+//actual Linear regressor model
 from sklearn.linear_model import LinearRegression
 model =LinearRegression()
 model.fit(X_train,Y_train)
 y_pred= model.predict(X_test)
 
+//metrics for efficiency calculation
 from sklearn.metrics import mean_squared_error
 print(mean_squared_error(Y_test,y_pred))
 print(mean_squared_error(Y_test,y_pred,squared=False))
